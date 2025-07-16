@@ -8,6 +8,12 @@ class StringAdder
       numbers = numbers.gsub(delimiter, ',')
     end
 
-    numbers.gsub("\n", ',').split(',').map(&:to_i).sum
+    numbers = numbers.gsub("\n", ',')
+    nums = numbers.split(',').map(&:to_i)
+
+    negatives = nums.select { |n| n < 0 }
+    raise "negative numbers not allowed #{negatives.join(',')}" if negatives.any?
+
+    nums.sum
   end
 end
