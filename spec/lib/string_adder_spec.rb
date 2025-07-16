@@ -13,5 +13,9 @@ RSpec.describe StringAdder do
     it 'returns the sum of two comma-separated numbers' do
       expect(described_class.add("1,5")).to eq(6)
     end
+
+    it 'returns sum of multiple comma-separated numbers' do
+      expect(described_class.add("1,2,3,4")).to eq(10)
+    end
   end
 end
