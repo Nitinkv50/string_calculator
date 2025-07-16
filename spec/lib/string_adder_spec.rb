@@ -9,5 +9,9 @@ RSpec.describe StringAdder do
     it 'returns number for single digit string' do
       expect(described_class.add("1")).to eq(1)
     end
+
+    it 'returns the sum of two comma-separated numbers' do
+      expect(described_class.add("1,5")).to eq(6)
+    end
   end
 end
